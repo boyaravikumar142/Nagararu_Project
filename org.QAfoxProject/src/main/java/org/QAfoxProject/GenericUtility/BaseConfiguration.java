@@ -1,7 +1,14 @@
 package org.QAfoxProject.GenericUtility;
 
+import java.time.Duration;
+
 import org.QAfoxProject.PageRepository.AccountLoginPage;
 import org.QAfoxProject.PageRepository.HomePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -31,7 +38,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 public class BaseConfiguration {
-
+	public WebDriver driver;
 	public WebDriverLibrary webdriverobj;
 	public ExcelFileLibrary excelutilityobj;
 	public PropertyFileLibrary propertyfileobj;
@@ -97,13 +104,15 @@ public class BaseConfiguration {
 		webdriverobj.waitUntilElementFound();
 
 		HomePage homeobj = new HomePage(webdriverobj.driver);
+		
+		javalibraryobj.pause(5000);
 
 		// click on myaccount headerlink
 		homeobj.Myaccount_headerlink().click();
 
 		// click on the Register account
 		// homeobj.getRegister_headerlink().click();
-
+		javalibraryobj.pause(2000);
 		// click on the Login Login header link
 		homeobj.getLogin_headerlink().click();
 
@@ -137,9 +146,11 @@ public class BaseConfiguration {
 
 		// Perform mouse HoverAction---->Desktop
 		webdriverobj.mouseHoverToElement(homeobj.getMyaccountheaderlink());
+		javalibraryobj.pause(5000);
 		homeobj.getMyaccountheaderlink().click();
 
 		webdriverobj.mouseHoverToElement(homeobj.getLogout());
+		javalibraryobj.pause(2000);
 		homeobj.getLogout().click();
 
 		// homeobj.getContinuebutton().click();
