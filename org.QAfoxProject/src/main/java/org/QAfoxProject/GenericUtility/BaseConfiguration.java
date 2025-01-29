@@ -52,9 +52,6 @@ public class BaseConfiguration {
 	@BeforeClass
 	public void browserSetup() {
 
-		// Initialize all the Library
-		initobjects();
-
 		WebDriverManager.chromedriver().setup();
 
 		String browser = "chrome";
@@ -145,7 +142,7 @@ public class BaseConfiguration {
 		webdriverobj.mouseHoverToElement(homeobj.getLogout());
 		homeobj.getLogout().click();
 
-		homeobj.getContinuebutton().click();
+		// homeobj.getContinuebutton().click();
 		// Test
 		Reporter.log("Browser Logout Successfully", true);
 
@@ -186,9 +183,9 @@ public class BaseConfiguration {
 
 	@BeforeSuite
 	public void getReportConnection() {
-
 		// Initialize all the Library
 		initobjects();
+
 		// Create the SparkReport
 		spark = new ExtentSparkReporter("./AdvanceReports/report.html");
 

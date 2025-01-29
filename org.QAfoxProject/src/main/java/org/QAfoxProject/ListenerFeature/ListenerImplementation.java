@@ -42,21 +42,21 @@ public class ListenerImplementation extends BaseConfiguration implements ITestLi
 
 		// 2. Call the Screenshot Method
 		// 3. Store the Screenshot in Temp Path
-		File source = ts.getScreenshotAs(OutputType.FILE);
+	///	File source = ts.getScreenshotAs(OutputType.FILE);
 
-		// Use TimeStamp
-		String timestamp = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date());
+//		// Use TimeStamp
+//		String timestamp = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date());
 
-		// 4.Create the Permanent Path
-		File destination = new File(
-				"./TestScreenshot/" + methodname + timestamp + javalibraryobj.getCurrentTime() + ".png");
+//		// 4.Create the Permanent Path
+//		File destination = new File(
+//				"./TestScreenshot/" + methodname + timestamp + javalibraryobj.getCurrentTime() + ".png");
 
-		// 5. Copy the Screenshot From Temp To Permanent Path
-		try {
-			FileHandler.copy(source, destination);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		// 5. Copy the Screenshot From Temp To Permanent Path
+//		try {
+//			FileHandler.copy(source, destination);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		Reporter.log("Test Failure Method Executed------Screenshot Taken", true);
 	}

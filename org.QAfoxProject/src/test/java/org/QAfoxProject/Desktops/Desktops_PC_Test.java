@@ -12,7 +12,7 @@ public class Desktops_PC_Test extends BaseConfiguration {
 	public void addProduct() {
 
 		// Create the Test Information
-		test = report.createTest("Verify-AddProduct_Desktops_PC");
+		test = super.report.createTest("Verify-AddProduct_Desktops_PC");
 
 		HomePage homeobj = new HomePage(webdriverobj.driver);
 

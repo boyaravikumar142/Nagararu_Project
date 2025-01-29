@@ -187,7 +187,7 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		softobj.assertAll();
 	}
 	
-	@Test(enabled=true,priority=1)
+	@Test
 	public void m1() {
 		
 		webdriverobj.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

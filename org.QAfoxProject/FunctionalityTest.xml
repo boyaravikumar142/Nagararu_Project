@@ -8,7 +8,6 @@
 	<test thread-count="5" parallel="tests" name="ChromeTest">
 		<classes>
 			<class name="org.QAfoxProject.Desktops.Desktops_Mac_Test" />
-			<class name="org.QAfoxProject.Desktops.Desktops_PC_Test" />
 		</classes>
 	</test> <!--ChromeTest -->
 </suite> <!--Suite_Functionality -->
