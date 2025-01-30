@@ -92,7 +92,7 @@ public class WebDriverLibrary {
 	 * @param time
 	 */
 	public void waitUntilElementFound() {
-		driver.manage().timeouts().implicitlyWait(PathConstant.DURATION, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(PathConstant.DURATION, TimeUnit.MILLISECONDS);
 	}
 
 	/**

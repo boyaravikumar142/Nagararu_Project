@@ -102,12 +102,8 @@ public class BaseConfiguration {
 
 		// PROVIDE WAIT STATEMENT
 		webdriverobj.waitUntilElementFound();
-
 		HomePage homeobj = new HomePage(webdriverobj.driver);
 
-		// PROVIDE WAIT STATEMENT
-		WebElement element1 = homeobj.getMyaccountheaderlink();
-		webdriverobj.waitUntilElementFound(element1);
 		// click on myaccount headerlink
 		homeobj.getMyaccountheaderlink().click();
 

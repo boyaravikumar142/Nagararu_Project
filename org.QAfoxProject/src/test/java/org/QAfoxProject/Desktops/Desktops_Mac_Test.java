@@ -19,7 +19,6 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 	public void addProduct_Desktops_Mac() {
 
 		webdriverobj.driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		;
 		
 		//Create the Test Information
 		test = report.createTest("Verify-AddProduct_Desktops_Mac");
