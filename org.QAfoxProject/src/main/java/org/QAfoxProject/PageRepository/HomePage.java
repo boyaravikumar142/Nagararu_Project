@@ -213,7 +213,7 @@ public class HomePage {
 	/**
 	 * @return the myaccountbutton
 	 */
-	public WebElement Myaccount_headerlink() {
+	public WebElement getMyaccount_headerlink() {
 		return myaccountheaderlink;
 	}
 

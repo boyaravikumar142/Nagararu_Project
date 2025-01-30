@@ -105,14 +105,13 @@ public class BaseConfiguration {
 
 		HomePage homeobj = new HomePage(webdriverobj.driver);
 		
-		javalibraryobj.pause(5000);
 
 		// click on myaccount headerlink
-		homeobj.Myaccount_headerlink().click();
+		homeobj.getMyaccountheaderlink().click();
 
 		// click on the Register account
 		// homeobj.getRegister_headerlink().click();
-		javalibraryobj.pause(2000);
+		
 		// click on the Login Login header link
 		homeobj.getLogin_headerlink().click();
 
