@@ -210,12 +210,12 @@ public class HomePage {
 		return phonebutton;
 	}
 
-	/**
-	 * @return the myaccountbutton
-	 */
-	public WebElement getMyaccount_headerlink() {
-		return myaccountheaderlink;
-	}
+//	/**
+//	 * @return the myaccountbutton
+//	 */
+//	public WebElement getMyaccount_headerlink() {
+//		return myaccountheaderlink;
+//	}
 
 	/**
 	 * @return the wishlistbutton
