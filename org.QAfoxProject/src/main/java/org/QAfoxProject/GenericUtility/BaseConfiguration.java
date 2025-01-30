@@ -102,14 +102,23 @@ public class BaseConfiguration {
 
 		// PROVIDE WAIT STATEMENT
 		webdriverobj.waitUntilElementFound();
-		HomePage homeobj = new HomePage(webdriverobj.driver);
 
-		// click on myaccount headerlink
-		homeobj.getMyaccountheaderlink().click();
+		HomePage homeobj = new HomePage(webdriverobj.driver);
 
 		// click on the Register account
 		// homeobj.getRegister_headerlink().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+		webdriverobj.mouseHoverToElement(homeobj.getMyaccountheaderlink());
+		// click on myaccount headerlink
+		homeobj.getMyaccountheaderlink().click();
+
+		webdriverobj.mouseHoverToElement(homeobj.getLogin_headerlink());
 		// click on the Login Login header link
 		homeobj.getLogin_headerlink().click();
 

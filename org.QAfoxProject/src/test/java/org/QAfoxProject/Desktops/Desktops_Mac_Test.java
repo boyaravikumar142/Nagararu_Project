@@ -8,6 +8,7 @@ import org.QAfoxProject.PageRepository.MacPage;
 import org.QAfoxProject.PageRepository.Mac_1;
 import org.QAfoxProject.PageRepository.Mac_Final;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -32,21 +33,26 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		test.log(Status.INFO, actualurl);
 		Assert.assertEquals(expectedurl, actualurl);
 		test.log(Status.PASS, "Step 1: URL of the Web Page after Login Verified Successfully");
+		Reporter.log("validate the webpage after login successfull",true);
 
 		//Perform Mouse HoverAction---->Desktop
 		webdriverobj.mouseHoverToElement(homeobj.getDesktop_headertext());
 		test.log(Status.PASS, "Step 2:Perform Mouse HoverAction-Desktops");
 		homeobj.getDesktop_headertext().click();
 		test.log(Status.PASS, "Step 2.2:Perform click Action-Desktops");
+		Reporter.log("Mouse hover and click on the desktop successfull",true);
 
 		javalibraryobj.pause(5000);
 		//Perform Mouse Hover---->Mac
 		webdriverobj.mouseHoverToElement(homeobj.getDesktop_mac_headertext());
 		test.log(Status.PASS, "Step 3.1:Perform Mouse HoverAction-Mac");
+		Reporter.log("Mouse Hover to mac successfull",true);
 		
 		//Perform the Click Action------>Mac
 		homeobj.getDesktop_mac_headertext().click();
 		test.log(Status.PASS, "Step 3.2:Perform click Action-MAC");
+		Reporter.log("clicking on mac is successfull",true);
+		
 
 		javalibraryobj.pause(3000);
 		
@@ -57,18 +63,22 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		System.out.println(actualtitle_text);
 		//Create an Object for the Soft Assert Class to perform Validation
 		SoftAssert softobj = new SoftAssert();
+		Reporter.log("Fetching the mac text is sucessfull",true);
 		
 		//Validate the "Mac Textfield" using Soft Assertion
 		softobj.assertEquals(expectedtitle_text,actualtitle_text);
 		test.log(Status.PASS, "Step 5: Mac_Text Element Verified Successfully");
+		Reporter.log("Mac_Text Element Verified Successfully",true);
 		
 		//Validate the "iMac Hyperlinktext" for the Product using Soft Assertion
 		softobj.assertTrue(mac1obj.getImac_hypertext().isDisplayed() && mac1obj.getImac_hypertext().isEnabled());
 		test.log(Status.PASS, "Step 5.1: iMac_hypertext Element Verified Successfully");
+		Reporter.log("iMac_hypertext Element Verified Successfully");
 		
 		//Perform the Click Action--iMac_Hyperlink
 		mac1obj.getImac_hypertext().click();
 		test.log(Status.PASS, "Step : iMac_hypertext Element Clicked Successfully");
+		Reporter.log("iMac_hypertext Element Clicked Successfully",true);
 		
 		MacPage macobj = new MacPage(webdriverobj.driver);
 		
@@ -77,62 +87,75 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		String actual_textfield = macobj.getImac_textfield().getText();
 		softobj.assertEquals(expected_textfield,actual_textfield);
 		test.log(Status.PASS, "Step : iMac_textfield Element Verified Successfully");
+		Reporter.log("iMac_textfield Element Verified Successfully",true);
 		
 		//Validate the "Brand nametext" for the Product using Soft Assertion
 		String expected_Brand_nametext = "Brand: Apple";
 		String actual_Brand_nametext = macobj.getBrand_nametext().getText();
 		softobj.assertEquals(expected_Brand_nametext,actual_Brand_nametext);
 		test.log(Status.PASS, "Step : Brand_nametext Element Verified Successfully");
+		Reporter.log("Brand_nametext Element Verified Successfully",true);
 		
 		//Validate the "Product_Code_Text" for the Product using Soft Assertion
 		String expected_Product_code_text = "Product Code:Product 14";
 		String actual_Product_code_text = macobj.getProduct_code_text().getText();
 		softobj.assertEquals(expected_Product_code_text,actual_Product_code_text);
 		test.log(Status.PASS, "Step : Product_Code_Text Element Verified Successfully");
+		Reporter.log("Product_Code_Text Element Verified Successfully",true);
 		
 		//Validate the "Avaliability_text" for the Product using Soft Assertion
 		String expected_Avaliability_text = "Availability:Out Of Stock";
 		String actual_Avaliability_text = macobj.getAvaliability_text().getText();
 		softobj.assertEquals(expected_Avaliability_text,actual_Avaliability_text);
 		test.log(Status.PASS, "Step : Avaliability_text Element Verified Successfully");
+		Reporter.log("Avaliability_text Element Verified Successfully",true);
 		
 		//Validate the "Product_Price_text" for the Product using Soft Assertion
 		String expected_Product_price_text = "$122.00";
 		String actual_Product_price_text = macobj.getProduct_price_text().getText();
 		softobj.assertEquals(expected_Product_price_text,actual_Product_price_text);
 		test.log(Status.PASS, "Step : Product_Price_text Element Verified Successfully");
+		Reporter.log("Product_Price_text Element Verified Successfully",true);
 		
 		//Validate the "Excisetax_Price_text" for the Product using Soft Assertion
 		String expected_Excisetax_price_text = "Ex Tax:$100.00";
 		String actual_Excisetax_price_text = macobj.getExcisetax_price_text().getText();
 		softobj.assertEquals(expected_Excisetax_price_text,actual_Excisetax_price_text);
 		test.log(Status.PASS, "Step : Excisetax_Price_text Element Verified Successfully");
+		Reporter.log("Excisetax_Price_text Element Verified Successfully",true);
 		
 		//Validate the "Qty_Header_text" for the Product using Soft Assertion
 		String expected_Qty_header_text = "Qty";
 		String actual_Qty_header_text = macobj.getQty_header_text().getText();
 		softobj.assertEquals(expected_Qty_header_text, actual_Qty_header_text);
 		test.log(Status.PASS, "Step : Qty_Header_text Element Verified Successfully");
+		Reporter.log("Qty_Header_text Element Verified Successfully",true);
 		
 		//Validate the "Qty_textfield" for the selected product using Soft Assertion
 		softobj.assertTrue(macobj.getQty_textfield().isDisplayed() && macobj.getQty_textfield().isEnabled());
 		test.log(Status.PASS, "Step : Qty_textfield Element Verified Successfully");
+		Reporter.log("Qty_textfield Element Verified Successfully",true);
 		
 		//Perform the Click Action--Qty_textfield
 		macobj.getQty_textfield().click();
 		test.log(Status.INFO, "Step : Qty_textfield Element Clicked Successfully");
+		Reporter.log("Qty_textfield Element Clicked Successfully",true);
 		macobj.getQty_textfield().clear();
 		test.log(Status.INFO, "Step : Qty_textfield Element Cleared Successfully");
+		Reporter.log("Qty_textfield Element Cleared Successfully",true);
 		macobj.getQty_textfield().sendKeys("2");
 		test.log(Status.INFO, "Step : In Qty_textfield Element, Qty Entered Successfully");
+		Reporter.log("In Qty_textfield Element, Qty Entered Successfully",true);
 		
 		//Validate the "Add to Cart" button using Soft Assertion
 		softobj.assertTrue(macobj.getAddtocartbutton().isDisplayed() && macobj.getAddtocartbutton().isEnabled());
 		test.log(Status.PASS, "Step : Add to Cart Button Element Verified Successfully");
+		Reporter.log("Add to Cart Button Element Verified Successfully",true);
 		
 		//Perform the Click Action--Add to Cart button
 		macobj.getAddtocartbutton().click();
 		test.log(Status.INFO, "Step : Add to Cart Button Element Clicked Successfully");
+		Reporter.log("Add to Cart Button Element Clicked Successfully",true);
 		
 		//macobj = new MacPage(webdriverobj.driver);
 		
@@ -146,29 +169,35 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		//Validate the "Shopping Cart" button using Soft Assertion
 		softobj.assertTrue(macobj.getCartbutton().isDisplayed() && macobj.getCartbutton().isEnabled());
 		test.log(Status.PASS, "Step : Shoppingcart Button Element Verified Successfully");
+		Reporter.log("Shoppingcart Button Element Verified Successfully",true);
 						
 		//Perform the Click Action--Shopping Cart
 		javalibraryobj.pause(4000);
 		macobj.getCartbutton().click();
 		test.log(Status.INFO, "Step : Shopping Cart Button Element Clicked Successfully");
+		Reporter.log("Shopping Cart Button Element Clicked Successfully",true);
 		
 		//Validate the "View Cart" button using Soft Assertion
 		softobj.assertTrue(macobj.getView_cart_hypertext().isDisplayed() && macobj.getView_cart_hypertext().isEnabled());
 		test.log(Status.PASS, "Step : View Cart Button Element Verified Successfully");
+		Reporter.log("View Cart Button Element Verified Successfully",true);
 		
 		//Perform the Click Action--View Cart Hyperlink
 		macobj.getView_cart_hypertext().click();
 		test.log(Status.INFO, "Step : View Cart Hyperlink Element Clicked Successfully");
+		Reporter.log("View Cart Hyperlink Element Clicked Successfully",true);
 		
 		Mac_Final macfinalobj = new Mac_Final(webdriverobj.driver); 
 		
 		//Validate the "Checkout" button using Soft Assertion
 		softobj.assertTrue(macfinalobj.getCheckoutbutton().isDisplayed() && macfinalobj.getCheckoutbutton().isEnabled());
 		test.log(Status.PASS, "Step : Checkout Button Element Verified Successfully");
+		Reporter.log("Checkout Button Element Verified Successfully",true);
 		
 		//Perform the Click Action--Checkout
 		macfinalobj.getCheckoutbutton().click();
 		test.log(Status.INFO, "Step : Checkout Button Element Clicked Successfully");
+		Reporter.log("Checkout Button Element Clicked Successfully",true);
 		
 		//Validate the "Alert_textmessage" displayed using Soft Assertion
 		//String expected_alert_textmessage = "Products marked with *** are not available in the desired quantity or not in stock!     ";
@@ -177,9 +206,12 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		//test.log(Status.PASS, "Step : Products Alert_textmessage Element Verified Successfully");
 		
 		macobj.getCartbutton().click();
+		Reporter.log("cart button is clicked succesfully",true);
 		macobj.getCartitemsclearbutton().click();
+		Reporter.log("cart items button is get clicked succesfully",true);
 		
 		macfinalobj.getContinuebutton().click();
+		Reporter.log("Continue Button is clicked successfully",true);
 		//Navigate back to the Home Page
 		//webdriverobj.driver.navigate().to("https://tutorialsninja.com/demo/");
 		
@@ -199,6 +231,7 @@ public class Desktops_Mac_Test extends BaseConfiguration {
 		HomePage homeobj = new HomePage(webdriverobj.driver);
 
 		homeobj.getTabletsheaderlink().click();
+		Reporter.log("Clicking on the Tabletes Succesfull",true);
 	}
 
 }

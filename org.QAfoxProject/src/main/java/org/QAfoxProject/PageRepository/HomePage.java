@@ -32,7 +32,7 @@ public class HomePage {
 	@FindBy(xpath = "//i[@class='fa fa-phone']")
 	private WebElement phonebutton;
 
-	@FindBy(xpath = "//span[contains(text(),'My')]")
+	@FindBy(xpath = "//span[@class='caret']")
 	private WebElement myaccountheaderlink;
 
 	@FindBy(xpath = "//span[contains(text(),'Wish')]")
