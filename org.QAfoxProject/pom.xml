@@ -78,6 +78,10 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>SystemTest.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<executionBrowser>${browser}</executionBrowser>
+						<appURL>${url}</appURL>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>
