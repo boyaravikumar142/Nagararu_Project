@@ -95,16 +95,16 @@ public class WebDriverLibrary {
 		driver.manage().timeouts().implicitlyWait(PathConstant.DURATION, TimeUnit.MILLISECONDS);
 	}
 
-	/**
-	 * This method Waits Until element is visible on the Web Page
-	 * @param element
-	 * 
-	 */
-	public void waitUntilElementFound(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, PathConstant.DURATION);
-		wait.until(ExpectedConditions.visibilityOf(element));
-
-	}
+//	/**
+//	 * This method Waits Until element is visible on the Web Page
+//	 * @param element
+//	 * 
+//	 */
+//	public void waitUntilElementFound(WebElement element) {
+//		WebDriverWait wait = new WebDriverWait(driver, PathConstant.DURATION);
+//		wait.until(ExpectedConditions.visibilityOf(element));
+//
+//	}
 	
 	/**
 	 * This method is used to mouse hover on an element
